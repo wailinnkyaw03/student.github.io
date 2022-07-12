@@ -26,11 +26,11 @@
   </div>
   <div class="container mt-3">
     <h2 class="">FE Student Registeration Forms</h2>
-    {% if user.is_authenticated %} 
+    <!-- {% if user.is_authenticated %} 
     <p>{{ user.username }}, You have successfully logged in!
     {% else %} 
     <h2>You are not logged in!</h2>
-    {% endif %}
+    {% endif %} -->
     <p>Please Enter Your Detail Information Here!</p>
     <form action="addrecord/" method="post">
       {% csrf_token %}

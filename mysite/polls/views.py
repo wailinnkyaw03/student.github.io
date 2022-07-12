@@ -16,7 +16,23 @@ def index(request):
   }
   return HttpResponse(template.render(context, request))
 
-def register(request):
+def userpage(request):
+  template = loader.get_template('userlogin.html')
+  return HttpResponse(template.render({}, request))
+
+def userlogin(request):
+  l = request.POST['pass']
+  if (l==""):
+    messages.info(request, "Please Enter ACCESSED PASSCODE!")
+    return HttpResponseRedirect(reverse('userpage'))
+  elif (l=="student1"):
+    messages.info(request, 'ACCESS PASSED!')
+    return HttpResponseRedirect(reverse('add'))
+  else:
+    messages.info(request, 'ACCESS DENIED!')
+  return HttpResponseRedirect(reverse('userpage'))
+
+#def register(request):
   if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -42,7 +58,7 @@ def adminlogin(request):
   if (k==""):
     messages.info(request, "Please Enter ACCESSED PASSCODE!")
     return HttpResponseRedirect(reverse('adminpage'))
-  elif (k=="jkt"):
+  elif (k=="jktmyanmar"):
     messages.info(request, 'ACCESS PASSED!')
     return HttpResponseRedirect(reverse('list'))
   else:
