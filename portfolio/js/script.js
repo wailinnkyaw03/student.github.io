@@ -5,7 +5,7 @@ window.addEventListener("load", function(){
 
 
 var typed = new Typed(".auto-type", {
-    strings: ["Web Developer.", "React Developer.","Laravel Developer."],
+    strings: ["Web Developer.", "Full-Stack Developer.","Laravel Developer."],
     typeSpeed:150,
     backSpeed:150,
     loop:true
